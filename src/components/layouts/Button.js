@@ -4,13 +4,17 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 
 class Button extends React.Component {
-    onPress = () => {
-        return console.log('pressed');
+    constructor(props) {
+        super(props)
+        this.onPress = this.onPress.bind(this)
     }
     render() {
-        const { label, onPress } = this.props;
+
+        const containerStyle = [
+            styles.container
+        ];
         return (
-            <TouchableOpacity style={styles.container} onPress={onPress}>
+            <TouchableOpacity style={containerStyle} onPress={this.onPress}>
                 <Text style={styles.text}>LOG IN</Text>
             </TouchableOpacity>
         );
@@ -34,7 +38,13 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: "center",
         height: 20
-    }
+    },
+    containerEnabled: {
+        opacity: 1
+    },
+    containerDisabled: {
+        opacity: 0.3
+    },
 });
 
 export default Button;

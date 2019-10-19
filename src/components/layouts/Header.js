@@ -5,7 +5,7 @@ const Header = ({ title }) => {
     const { textStyle, viewStyle } = styles
     return (
         <View style={viewStyle}>
-            <Text style={textStyle}>{title}</Text>
+            <Text style={textStyle}>{title || 'DNA'}</Text>
         </View>
     )
 }
@@ -24,7 +24,8 @@ const styles = {
         position: 'relative'
     },
     textStyle: {
-        fontSize: 20
+        fontSize: 15,
+        marginTop: 15
     }
 }
 
